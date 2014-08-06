@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <title>jquery sample</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $('#menu').hide();
+        $('#btn').click(function(){
+          $('#menu').slideToggle(100);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn">検索ツール</button>
+    <div id="menu">
+      <a href="#">すべての言語▽</a>
+      <a href="#">期間指定なし▽</a>
+      <a href="#">全ての結果▽</a>
+    </div>
+  </body>
+</html>

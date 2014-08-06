@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <title>jquery sample</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        //ページ内スクロール
+        $("#btn_down").click(function () {
+          var p = $(window).scrollTop() + 300;
+          $('html,body').animate({ scrollTop: p }, 'fast');
+          return false;
+        });
+        $("#btn_up").click(function () {
+          var p = $(window).scrollTop() - 300;
+          $('html,body').animate({ scrollTop: p }, 'fast');
+          return false;
+        });
+        //ページ上部へ戻る
+        $("#btn_top").click(function () {
+          $('html,body').animate({ scrollTop: 0 }, 'fast');
+          return false;
+        });
+        //ページ下部へ
+        $("#btn_bottom").click(function () {
+          $('html,body').animate({ scrollTop: $('body').height() }, 'fast');
+          return false;
+        });
+      });
+    </script>
+    <style>
+      .flow {
+        top: 200px;
+        position: fixed;
+        z-index: 999;
+        margin-left:360px;
+        width: 120px;
+        padding:10px;
+        background:#acd5d5;
+        border-radius: 5px 5px 5px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <ul>
+        <li>目次
+        <li>第1章 ゼロからデプロイまで</li>
+        <li>1.1はじめに</li>
+        <li>1.1.1読者の皆さまへ</li>
+        <li>1.1.2 Railsとスケールについて</li>
+        <li>1.1.3この本における取り決め</li>
+        <li>1.2 さっそく動作させる</li>
+        <li>1.2.1開発環境</li>
+        <li>IDE</li>
+        <li>テキストエディタとコマンドライン</li>
+        <li>ブラウザ</li>
+        <li>使用するツールについて</li>
+        <li>1.2.2Ruby、RubyGems、Rails、Git</li>
+        <li>Railsインストーラ (Windows)</li>
+        <li>Gitのインストール</li>
+        <li>Rubyのインストール</li>
+        <li>RubyGemsのインストール</li>
+        <li>Railsのインストール</li>
+        <li>1.2.3最初のアプリケーション</li>
+        <li>1.2.4 Bundler</li>
+        <li>1.2.5 rails server</li>
+        <li>1.2.6Model-view-controller (MVC)</li>
+        <li>1.3Gitによるバージョン管理</li>
+        <li>1.3.1インストールとセットアップ</li>
+        <li>初めてのシステムセットアップ</li>
+        <li>初めてのリポジトリセットアップ</li>
+        <li>1.3.2追加とコミット</li>
+        <li>1.3.3Gitのメリット</li>
+        <li>1.3.4 GitHub</li>
+        <li>1.3.5ブランチ (branch)、変更 (edit)、 コミット (commit)、マージ (merge)</li>
+        <li>ブランチ (branch)</li>
+        <li>変更 (edit)</li>
+        <li>コミット (commit)</li>
+        <li>マージ (merge)</li>
+        <li>プッシュ (push)</li>
+        <li>1.4デプロイする</li>
+        <li>1.4.1 Herokuのセットアップ</li>
+        <li>1.4.2 Herokuにデプロイする (1)</li>
+        <li>1.4.3 Herokuにデプロイする (2)</li>
+        <li>1.4.4 Heroku コマンド</li>
+        <li>1.5 最後に</li>
+        <li>第2章デモアプリケーション</li>
+        <li>2.1 アプリの計画</li>
+        <li>2.1.1ユーザーのモデル設計</li>
+        <li>2.1.2マイクロポストのモデル設計</li>
+        <li>2.2Users リソース</li>
+        <li>2.2.1ユーザーページを探検する</li>
+        <li>2.2.2 MVCの挙動</li>
+        <li>2.2.3Users リソースの欠点</li>
+        <li>2.3Microposts リソース</li>
+        <li>2.3.1マイクロポストのページを探検する</li>
+        <li>2.3.2マイクロポストをマイクロにする</li>
+        <li>2.3.3ユーザーとマイクロポストをhas_manyで関連づける</li>
+        <li>2.3.4継承の階層</li>
+        <li>2.3.5デモアプリケーションのデプロイ</li>
+        <li>2.4最後に</li>
+        <li>第3章ほぼ静的なページの作成</li>
+        <li>3.1静的ページ</li>
+        <li>3.2最初のテスト</li>
+        <li>3.2.1テスト駆動開発</li>
+        <li>3.2.2ページの追加</li>
+        <li>赤 (Red)</li>
+        <li>緑 (Green)</li>
+        <li>リファクタリング</li>
+        <li>3.3少しだけ動的なページ</li>
+        <li>3.3.1タイトル変更をテストする</li>
+        <li>3.3.2タイトルのテストをパスさせる</li>
+        <li>3.3.3埋め込みRuby</li>
+        <li>3.3.4レイアウトを使って重複を解消する</li>
+        <li>3.4最後に</li>
+        <li>3.5演習</li>
+        <li>3.6高度なセットアップ</li>
+        <li>3.6.1bundle execを追放する</li>
+        <li>RVM Bundler の統合</li>
+        <li>binstubsオプション</li>
+        <li>3.6.2Guardによるテストの自動化</li>
+        <li>3.6.3Spork を使ったテストの高速化</li>
+        <li>GuardにSporkを導入する</li>
+        <li>3.6.4Sublime Text上でテストする</li>
+        <li>第4章 Rails風味のRuby</li>
+        <li>4.1動機</li>
+        <li>4.2文字列(string)とメソッド</li>
+        <li>4.2.1コメント</li>
+        <li>4.2.2文字列</li>
+        <li>出力</li>
+        <li>シングルクォート内の文字列</li>
+        <li>4.2.3オブジェクトとメッセージ受け渡し</li>
+        <li>4.2.4メソッドの定義</li>
+        <li>4.2.5 title ヘルパー、再び</li>
+        <li>4.3他のデータ構造</li>
+        <li>4.3.1配列と範囲演算子</li>
+        <li>4.3.2ブロック</li>
+        <li>4.3.3ハッシュとシンボル</li>
+        <li>4.3.4 CSS、再び</li>
+        <li>4.4 Ruby におけるクラス</li>
+        <li>4.4.1コンストラクタ</li>
+        <li>4.4.2クラス継承</li>
+        <li>4.4.3組込みクラスの変更</li>
+        <li>4.4.4コントローラクラス</li>
+        <li>4.4.5ユーザークラス</li>
+        <li>4.5最後に</li>
+        <li>4.6演習</li>
+        <li>第5章レイアウトを作成する</li>
+        <li>5.1構造を追加する</li>
+        <li>5.1.1ナビゲーション</li>
+        <li>5.1.2BootstrapとカスタムCSS</li>
+        <li>5.1.3パーシャル (partial)</li>
+        <li>5.2SassとAsset Pipeline</li>
+        <li>5.2.1Asset Pipeline</li>
+        <li>アセットディレクトリ</li>
+        <li>マニフェストファイル</li>
+        <li>プリプロセッサエンジン</li>
+        <li>本番環境での効率性</li>
+        <li>5.2.2素晴らしい構文を備えたスタイルシート</li>
+        <li>ネスト</li>
+        <li>変数</li>
+        <li>5.3レイアウトのリンク</li>
+        <li>5.3.1 ルートのテスト</li>
+        <li>5.3.2 Railsのルート</li>
+        <li>5.3.3名前付きルート</li>
+        <li>5.3.4RSpecを洗練させる</li>
+        <li>5.4ユーザー登録: 最初のステップ</li>
+        <li>5.4.1Usersコントローラ</li>
+        <li>5.4.2 ユーザー登録用URL</li>
+        <li>5.5最後に</li>
+        <li>5.6演習</li>
+        <li>第6章ユーザーのモデルを作成する</li>
+        <li>6.1 Userモデル</li>
+        <li>6.1.1データベースの移行</li>
+        <li>6.1.2modelファイル</li>
+        <li>6.1.3ユーザーオブジェクトを作成する</li>
+        <li>6.1.4ユーザーオブジェクトを検索する</li>
+        <li>6.1.5ユーザーオブジェクトを更新する</li>
+        <li>6.2ユーザーを検証する</li>
+        <li>6.2.1最初のユーザーテスト</li>
+        <li>6.2.2プレゼンスを検証する</li>
+        <li>6.2.3長さを検証する</li>
+        <li>6.2.4フォーマットを検証する</li>
+        <li>6.2.5一意性を検証する</li>
+        <li>一意性の警告</li>
+        <li>6.3セキュアなパスワードを追加する</li>
+        <li>6.3.1暗号化されたパスワード</li>
+        <li>6.3.2パスワードと確認</li>
+        <li>6.3.3ユーザー認証</li>
+        <li>6.3.4ユーザーがセキュアなパスワードを持っている</li>
+        <li>6.3.5ユーザーを作成する</li>
+        <li>6.4最後に</li>
+        <li>6.5演習</li>
+        <li>第7章ユーザー登録</li>
+        <li>7.1ユーザーを表示する</li>
+        <li>7.1.1デバッグとRails環境</li>
+        <li>7.1.2ユーザーリソース</li>
+        <li>7.1.3ファクトリーを使用してユーザー表示ページをテストする</li>
+        <li>7.1.4gravatar画像とサイドバー</li>
+        <li>7.2ユーザー登録フォーム</li>
+        <li>7.2.1ユーザー登録のためのテスト</li>
+        <li>7.2.2form_forを使用する</li>
+        <li>7.2.3フォームHTML</li>
+        <li>7.3ユーザー登録失敗</li>
+        <li>7.3.1正しいフォーム</li>
+        <li>7.3.2 Strong Parameters</li>
+        <li>7.3.3ユーザー登録のエラーメッセージ</li>
+        <li>7.4ユーザー登録成功</li>
+        <li>7.4.1登録フォームの完成</li>
+        <li>7.4.2flash</li>
+        <li>7.4.3実際のユーザー登録</li>
+        <li>7.4.4 SSLを導入して本番環境をデプロイする</li>
+        <li>7.5最後に</li>
+        <li>7.6演習</li>
+        <li>第8章サインイン、サインアウト</li>
+        <li>8.1セッション、サインインの失敗</li>
+        <li>8.1.1Sessionコントローラ</li>
+        <li>8.1.2サインインをテストする</li>
+        <li>8.1.3サインインのフォーム</li>
+        <li>8.1.4確認フォームを送信する</li>
+        <li>8.1.5フラッシュメッセージを表示する</li>
+        <li>8.2サインイン成功</li>
+        <li>8.2.1[このアカウント設定を保存する]</li>
+        <li>8.2.2正しいsign_inメソッド</li>
+        <li>8.2.3現在のユーザー</li>
+        <li>8.2.4レイアウトリンクを変更する</li>
+        <li>8.2.5ユーザー登録と同時にサインインする</li>
+        <li>8.2.6サインアウトする</li>
+        <li>8.3Cucumberの紹介 (オプション)</li>
+        <li>8.3.1インストールと設定</li>
+        <li>8.3.2フィーチャーとステップ</li>
+        <li>8.3.3対比: RSpecのカスタムマッチャー</li>
+        <li>8.4最後に</li>
+        <li>8.5演習</li>
+        <li>第9章 ユーザーの更新・表示・削除</li>
+        <li>9.1ユーザーを更新する</li>
+        <li>9.1.1編集フォーム</li>
+        <li>9.1.2編集の失敗</li>
+        <li>9.1.3編集の成功</li>
+        <li>9.2認可</li>
+        <li>9.2.1ユーザーのサインインを要求する</li>
+        <li>9.2.2正しいユーザーを要求する</li>
+        <li>9.2.3フレンドリーフォワーディング</li>
+        <li>9.3すべてのユーザーを表示する</li>
+        <li>9.3.1ユーザーインデックス</li>
+        <li>9.3.2サンプルのユーザー</li>
+        <li>9.3.3ページネーション</li>
+        <li>9.3.4パーシャルのリファクタリング</li>
+        <li>9.4ユーザーを削除する</li>
+        <li>9.4.1管理ユーザー</li>
+        <li>Strong Parameters、再び</li>
+        <li>9.4.2 destroyアクション</li>
+        <li>9.5最後に</li>
+        <li>9.6演習</li>
+        <li>第10章ユーザーのマイクロポスト</li>
+        <li>10.1Micropostモデル</li>
+        <li>10.1.1基本的なモデル</li>
+        <li>10.1.2最初の検証</li>
+        <li>10.1.3User/Micropostの関連付け</li>
+        <li>10.1.4マイクロポストを改良する</li>
+        <li>デフォルトのスコープ</li>
+        <li>Dependent: destroy</li>
+        <li>10.1.5コンテンツの検証</li>
+        <li>10.2マイクロポストを表示する</li>
+        <li>10.2.1ユーザー表示ページの拡張</li>
+        <li>10.2.2マイクロポストのサンプル</li>
+        <li>10.3マイクロポストを操作する</li>
+        <li>10.3.1アクセス制御</li>
+        <li>10.3.2マイクロポストを作成する</li>
+        <li>10.3.3フィードの原型</li>
+        <li>10.3.4マイクロポストを削除する</li>
+        <li>10.4最後に</li>
+        <li>10.5演習</li>
+        <li>第11章ユーザーをフォローする</li>
+        <li>11.1Relationshipモデル</li>
+        <li>11.1.1データモデルの問題 (および解決策)</li>
+        <li>11.1.2User/relationshipの関連付け</li>
+        <li>11.1.3検証</li>
+        <li>11.1.4フォローしているユーザー</li>
+        <li>11.1.5フォロワー</li>
+        <li>11.2フォローしているユーザー用のWebインターフェイス</li>
+        <li>11.2.1フォローしているユーザーのサンプルデータ</li>
+        <li>11.2.2統計とフォロー用フォーム</li>
+        <li>11.2.3「フォローしているユーザー」ページと「フォロワー」ページ</li>
+        <li>11.2.4[フォローする] ボタン (標準的な方法)</li>
+        <li>11.2.5[フォローする] ボタン (Ajax)</li>
+        <li>11.3ステータスフィード</li>
+        <li>11.3.1動機と計画</li>
+        <li>11.3.2フィードを初めて実装する</li>
+        <li>11.3.3サブセレクト</li>
+        <li>11.3.4新しいステータスフィード</li>
+        <li>11.4最後に</li>
+        <li>11.4.1サンプルアプリケーションの機能を拡張する</li>
+        <li>返信機能</li>
+        <li>メッセージ機能</li>
+        <li>フォロワーの通知</li>
+        <li>パスワードリマインダー</li>
+        <li>ユーザー登録の確認</li>
+        <li>RSSフィード</li>
+        <li>REST API</li>
+        <li>検索機能</li>
+        <li>11.4.2読み物ガイド</li>
+        <li>11.5演習</li>
+      </ul>
+    </div>
+    <div id="menu" class="flow">
+      <button id="btn_top">TOP △</button><br>
+      <button id="btn_up">UP ▲</button><br>
+      <button id="btn_down">DOWN ▼</button><br>
+      <button id="btn_bottom">BOTTOM ▽</button>
+    </div>
+  </body>
+</html>
